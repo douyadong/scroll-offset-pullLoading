@@ -1,4 +1,4 @@
-# 关于jquery的scroo()、scrollTop()和offset()方法理解
+# 关于jquery的scroll()、scrollTop()和offset()方法理解以及下拉加载
 
 ## scroll()
 ```
@@ -22,7 +22,7 @@ $(selector).offset().top;获取该元素在文档中的位置;
 ```
 ## 下拉加载数据
 ```
-($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉倒底时即可加载));
+($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉到底时即可加载));
 $(selector).scroll(function(){
     if(($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉倒底时即可加载));){
         发送ajax;
