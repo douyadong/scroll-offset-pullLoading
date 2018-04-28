@@ -23,9 +23,20 @@ $(selector).offset().top;获取该元素在文档中的位置;
 ## 下拉加载数据
 ```
 ($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉到底时即可加载));
+设置一个外部变量，用来判断是否还需要发送请求加载数据列表;
+var continuePullLoad=true;
 $(selector).scroll(function(){
-    if(($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉倒底时即可加载));){
-        发送ajax;
+    if((($(window).height()+$(window).scrollTop())>($(最后一个标签).height()+$(最后一个标签).offset().top-0(也可减其他值，表示未拉倒底时即可加载)))&& continuePullLoad){
+        continuePullLoad=false;//必须在发送一次请求成功之后，才能再次发送请求;
+        $.ajax({
+            success:function(){
+                if(加载数据完毕){
+                    $(selector).off("scroll")//关闭滚动式触发的事件
+                }else{
+                    未加载全部数据数据continuePullLoad=true;可以再次发送请求;
+                }
+            }
+        })
     }
 })
 ```
