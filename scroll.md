@@ -1,4 +1,4 @@
-# 关于jquery的scroll()、scrollTop()和offset()方法理解以及下拉加载
+# 关于jquery的scroll()、scrollTop()和offset()方法理解以及下拉加载以及e.clientX,e.pageX,e.offsetX,e.screenX;
 
 ## scroll()
 ```
@@ -40,3 +40,5 @@ $(selector).scroll(function(){
     }
 })
 ```
+## 点击元素获取位置信息
+1. [e.clientX,e.pageX,e.offsetX,e.screenX](https://www.cnblogs.com/jiangxiaobo/p/6593584.html) https://www.cnblogs.com/jiangxiaobo/p/6593584.html
