@@ -6,13 +6,14 @@ $(window/元素).scroll(fuction(){
     console.log('发生滚动，事件执行执行')
 })
 ```
-## scrollTop()
+## scrollTop() scrollLeft()
 ```
 $(widow).height()表示浏览器窗口的高度;
 $(document).height()表示文档(页面)的高度;
 $(window).scrollTop()表示页面(不是浏览器窗口)滚动高度，但是所有浏览器都支持，因此在获取页面滚动高度时建议使用window;
 $(document).scrollTop()同样表示页面滚动高度;
 **scrollLeft()有相似效果**
+如果不是window、html、body而是普通元素，如div，则此div为父元素，其作用于子元素；子元素被遮挡距离;
 ```
 ## offset()
 ```
